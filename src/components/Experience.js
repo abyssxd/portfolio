@@ -11,7 +11,7 @@ const Experience = () => {
   const experiences = [
     {
       icon: <CodeIcon color="primary" />,
-      text: 'Created several personal web applications using HTML, CSS, JS, PHP & MySQL.',
+      text: 'Created several personal web applications using HTML, CSS, JS, ReactJS, PHP & MySQL.',
     },
     {
       icon: <BuildIcon color="secondary" />,
