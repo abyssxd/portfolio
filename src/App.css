@@ -1,38 +1,126 @@
-.App {
-  text-align: center;
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./components/fonts/Helvetica.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+@font-face {
+  font-family: 'Helvetica';
+  src: url('./components/fonts/Helvetica-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+body {
+  background: linear-gradient(145deg, #2e2e2e, #1a1a1a);
+  margin: 0;
+  font-family: 'Helvetica', sans-serif;
+  color: #ffffff;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+h1, h2, h3, h4 {
+  font-family: 'Helvetica', sans-serif;
+}
+
+.MuiContainer-root {
+  padding: 2rem;
+}
+
+
+.glassy {
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 10px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2rem;
+  color: #e0e0e0;
+}
+
+
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
+}
+
+.header-profile {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+.profile-avatar {
+  width: 200px !important; 
+  height: 200px !important;
+  margin-bottom: 1rem; 
+  border: 3px solid rgba(255, 255, 255, 0.5); 
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5); 
+}
+
+
+.name-glow {
+  font-size: 2rem;
+  font-weight: bold !important;
+  text-align: center;
+}
+
+
+.social-icons {
+  display: flex;
+  align-items: center;
+}
+
+.social-icons .MuiIconButton-root {
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+
+@media (max-width: 768px) {
+  .header-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .social-icons {
+    margin-top: 1rem;
+  }
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.stat-images img {
+  max-width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.spoken-languages {
+  margin-bottom: 2rem;
+}
+
+.spoken-languages .MuiChip-root {
+  font-size: 1rem;
+}
+
+.experience {
+  padding: 2rem;
+  border-radius: 10px;
+  color: white;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+}
+
+.experience .MuiListItem-root {
+  background-color: rgba(255, 255, 255, 0.1); 
+  padding: 10px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  transition: transform 0.3s ease;
+}
+
+.experience .MuiListItem-root:hover {
+  transform: scale(1.05);
 }
