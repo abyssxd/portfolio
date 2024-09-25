@@ -8,7 +8,7 @@ const About = () => {
         Hi there 👋
       </Typography>
       <Typography variant="body1" gutterBottom>
-        I'm an 18-year-old with an interest in Web, App & Game development. Currently studying the first year of baccalaureate at Institut Viladomat in Barcelona.
+        I'm an 18-year-old with an interest in Web, App & Game development. Currently studying the first year of baccalaureate at Institut Viladomat in Barcelona, Spain.
       </Typography>
     </Box>
   );
