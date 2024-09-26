@@ -29,14 +29,14 @@ const projects = [
   {
     name: "UltraBoomerangs Spigot Plugin",
     description: "Custom Minecraft plugin.",
-    icon: "images/ultraBoomerangs.webp",
+    icon: "images/ultraboomerangs.webp",
     isDisabled: false,
     url: "https://www.spigotmc.org/resources/ultraboomerangs-create-custom-unqiue-boomerangs-mcmmo-auraskills-support.113150/",
   },
   {
     name: "UltraCollections Spigot Plugin",
     description: "Minecraft plugin for item collections.",
-    icon: "images/ultraCollections.webp",
+    icon: "images/ultracollections.webp",
     isDisabled: false,
     url: "https://builtbybit.com/resources/ultracollections-fully-customizable.51098/",
   },
