@@ -5,9 +5,9 @@ const Languages = () => {
   const languages = ['Java', 'MySQL', 'Python', 'PHP', 'Javascript', 'ReactJS', 'HTML & CSS'];
 
   return (
-    <Box className="languages glassy moving-rgb-border">
+    <Box className="languages glassy">
       <Typography variant="h4" gutterBottom>
-        Languages
+        Programming Languages
       </Typography>
       <Grid container spacing={2}>
         {languages.map((lang, index) => (

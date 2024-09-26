@@ -3,7 +3,7 @@ import { Box, Typography } from '@mui/material';
 
 const About = () => {
   return (
-    <Box className="about glassy moving-rgb-border">
+    <Box className="about glassy">
       <Typography variant="h2" gutterBottom>
         Hi there 👋
       </Typography>

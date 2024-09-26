@@ -6,6 +6,7 @@ import Experience from './components/Experience';
 import Languages from './components/Languages';
 import Stats from './components/Stats';
 import SpokenLanguages from './components/SpokenLanguages';
+import Projects from './components/Projects';
 import './App.css';
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
         <Grid item xs={12}>
           <Experience />
         </Grid>
+        <Grid item xs={12}>
+          <Projects />
+        </Grid>
         <Grid item xs={12} md={6}>
           <Languages />
         </Grid>
@@ -34,6 +38,5 @@ function App() {
     </Container>
   );
 }
-
 
 export default App;

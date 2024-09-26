@@ -3,9 +3,9 @@ import { Box, Typography } from '@mui/material';
 
 const Stats = () => {
   return (
-    <Box className="stats glassy moving-rgb-border">
+    <Box className="stats glassy">
       <Typography variant="h4" gutterBottom>
-        Stats
+        Github Stats
       </Typography>
       <Box className="stat-images">
         <img src="https://github-readme-stats.vercel.app/api?username=abyssxd&show_icons=true&theme=radical" alt="GitHub stats" />

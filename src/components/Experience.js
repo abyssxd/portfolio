@@ -32,7 +32,7 @@ const Experience = () => {
   ];
 
   return (
-    <Box className="experience glassy moving-rgb-border">
+    <Box className="experience glassy">
       <Typography variant="h4" gutterBottom>
         Experience
       </Typography>
