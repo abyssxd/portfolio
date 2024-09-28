@@ -6,32 +6,11 @@ import { motion } from 'framer-motion';
 
 const projects = [
   {
-    name: "Live Cansat Dashboard",
-    description: "Real-time data display for CanSat competition.",
-    icon: <CodeIcon color="primary" />,
+    name: "BlockBase",
+    description: "A minecraft server website built using ReactJS",
+    icon: "images/blockbase.png",
     isDisabled: false,
-    url: "https://github.com/abyssxd/cansat_vila2sat_online",
-  },
-  {
-    name: "Local Cansat Dashboard",
-    description: "Real-time data display for CanSat competition.",
-    icon: <CodeIcon color="primary" />,
-    isDisabled: false,
-    url: "https://github.com/abyssxd/cansat_vila2sat",
-  },
-  {
-    name: "Python Serial Monitor for Live DashBoard",
-    description: "Python-based serial monitor for live data capture.",
-    icon: <CodeIcon color="primary" />,
-    isDisabled: false,
-    url: "https://github.com/abyssxd/vila2sat_serial",
-  },
-  {
-    name: "UltraBoomerangs Spigot Plugin",
-    description: "Custom Minecraft plugin.",
-    icon: "images/ultraboomerangs.webp",
-    isDisabled: false,
-    url: "https://www.spigotmc.org/resources/ultraboomerangs-create-custom-unqiue-boomerangs-mcmmo-auraskills-support.113150/",
+    url: "https://builtbybit.com/resources/blockbase-fully-customizable-website.52448/",
   },
   {
     name: "UltraCollections Spigot Plugin",
@@ -56,6 +35,35 @@ const projects = [
     url: "#", // Not yet released, no link available yet
     isClosedSource: true,
   },
+  {
+    name: "UltraBoomerangs Spigot Plugin",
+    description: "Custom Minecraft plugin.",
+    icon: "images/ultraboomerangs.webp",
+    isDisabled: false,
+    url: "https://www.spigotmc.org/resources/ultraboomerangs-create-custom-unqiue-boomerangs-mcmmo-auraskills-support.113150/",
+  },
+  {
+    name: "Live Cansat Dashboard",
+    description: "Real-time data display for CanSat competition.",
+    icon: <CodeIcon color="primary" />,
+    isDisabled: false,
+    url: "https://github.com/abyssxd/cansat_vila2sat_online",
+  },
+  {
+    name: "Local Cansat Dashboard",
+    description: "Real-time data display for CanSat competition.",
+    icon: <CodeIcon color="primary" />,
+    isDisabled: false,
+    url: "https://github.com/abyssxd/cansat_vila2sat",
+  },
+  {
+    name: "Python Serial Monitor for Live DashBoard",
+    description: "Python-based serial monitor for live data capture.",
+    icon: <CodeIcon color="primary" />,
+    isDisabled: false,
+    url: "https://github.com/abyssxd/vila2sat_serial",
+  },
+
 ];
 
 const ProjectCard = ({ project, index }) => {
