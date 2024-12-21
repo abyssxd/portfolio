@@ -60,7 +60,7 @@
 .language-chip {
   font-size: 1rem;
   font-weight: 600;
-  color: var(--text-color);
+  color: var(--text-color) !important;
   padding: 0.5rem 1rem;
   background: none;
 }
