@@ -16,7 +16,7 @@ const Languages = () => {
 
   return (
     <Box className="languages-container">
-      <Typography variant="h4" className="languages-header">
+      <Typography variant="h4" className="languages-header" gutterBottom>
         Programming Languages
       </Typography>
       <Grid container spacing={3} className="languages-grid">

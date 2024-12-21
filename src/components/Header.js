@@ -28,7 +28,7 @@ const Header = ({ toggleTheme, isLightMode }) => {
       <Box className="header-left">
         <Avatar
           alt="Abishek Bhusal"
-          src="images/pfp.jpg"
+          src="images/pfp.webp"
           className="profile-avatar"
         />
         <Typography className="header-name">

@@ -7,8 +7,8 @@ const SpokenLanguages = () => {
   const languages = [
     { label: 'Nepali - Native', flag: 'https://flagpedia.net/data/flags/h80/np.png', isSpecial: true },
     { label: 'English - C1', flag: 'https://flagpedia.net/data/flags/h80/gb.png' },
-    { label: 'Spanish - B1', flag: 'https://flagpedia.net/data/flags/h80/es.png' },
-    { label: 'Catalan - B1', flag: 'https://flagpedia.net/data/flags/h80/es.png' },
+    { label: 'Spanish - B2', flag: 'https://flagpedia.net/data/flags/h80/es.png' },
+    { label: 'Catalan - B2', flag: 'https://flagpedia.net/data/flags/h80/es.png' },
     { label: 'Hindi - Fluent', flag: 'https://flagpedia.net/data/flags/h80/in.png' },
   ];
 

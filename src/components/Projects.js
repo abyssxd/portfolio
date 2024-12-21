@@ -96,9 +96,8 @@ const ProjectCard = ({ project, index }) => (
 
 const Projects = () => (
   <Box className="projects-container">
-    <Typography variant="h4" className="projects-header">Projects</Typography>
-    <br/>
-    <Grid container spacing={3}>
+    <Typography variant="h4" className="projects-header" gutterBottom>Projects</Typography>
+      <Grid container spacing={3}>
       {projects.map((project, index) => (
         <Grid item xs={12} sm={6} md={4} key={index}>
           <ProjectCard project={project} index={index} />
