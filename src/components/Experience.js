@@ -6,47 +6,52 @@ import CloudIcon from '@mui/icons-material/Cloud';
 import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
 import AndroidIcon from '@mui/icons-material/Android';
 import { motion } from 'framer-motion';
+import './styles/experience.css';
 
 const Experience = () => {
   const experiences = [
     {
-      icon: <CodeIcon color="primary" />,
+      icon: <CodeIcon style={{ color: '#0078d7' }} />,
       text: 'Created several personal web applications using HTML, CSS, JS, ReactJS, PHP & MySQL.',
     },
     {
-      icon: <BuildIcon color="secondary" />,
+      icon: <BuildIcon style={{ color: '#ff6f61' }} />,
       text: 'Developed Minecraft plugins using the Spigot API.',
     },
     {
-      icon: <CloudIcon color="info" />,
+      icon: <CloudIcon style={{ color: '#00bcd4' }} />,
       text: 'Setup & configured Minecraft Server networks using Spigot & GeyserMC.',
     },
     {
-      icon: <RocketLaunchIcon color="warning" />,
+      icon: <RocketLaunchIcon style={{ color: '#ff9800' }} />,
       text: 'Worked on Arduino, ESP32 Projects, and participated in the CanSat 2024 competition with the Vila2Sat team.',
     },
     {
-      icon: <AndroidIcon color="success" />,
+      icon: <AndroidIcon style={{ color: '#4caf50' }} />,
       text: 'Working on a native Android app for my bachillerato research project.',
     },
   ];
 
   return (
-    <Box className="experience glassy">
-      <Typography variant="h4" gutterBottom>
+    <Box className="experience-container">
+      <Typography variant="h4" className="experience-header" gutterBottom>
         Experience
       </Typography>
-      <List>
+      <List className="experience-list">
         {experiences.map((experience, index) => (
           <motion.div
             key={index}
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            className="experience-item"
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <ListItem>
-              <ListItemIcon>{experience.icon}</ListItemIcon>
-              <ListItemText primary={experience.text} />
+            <ListItem className="experience-card">
+              <ListItemIcon className="experience-icon">{experience.icon}</ListItemIcon>
+              <ListItemText
+                primary={experience.text}
+                classes={{ primary: 'experience-text' }}
+              />
             </ListItem>
           </motion.div>
         ))}

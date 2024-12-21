@@ -1,10 +1,18 @@
 import React from 'react';
-import { Typography, Box, Grid, ListItem, ListItemIcon, ListItemText } from '@mui/material';
+import { Typography, Box, Grid } from '@mui/material';
 import CodeIcon from '@mui/icons-material/Code';
 import LockIcon from '@mui/icons-material/Lock';
 import { motion } from 'framer-motion';
+import './styles/projects.css';
 
 const projects = [
+  {
+    name: "History of Spain",
+    description: "A questionnaire for History of Spain for 2n Baxillerat Students in Catalan.",
+    icon: "images/historia.png",
+    isDisabled: false,
+    url: "https://github.com/abyssxd/historia_2nbaxillerat",
+  },
   {
     name: "BlockBase",
     description: "A minecraft server website built using ReactJS",
@@ -22,7 +30,7 @@ const projects = [
   {
     name: "Tutorial CMS Website",
     description: "CMS website built with PHP, MySQL, HTML, CSS & JS.",
-    icon: <LockIcon fontSize="large" color="action" />,
+    icon: <LockIcon fontSize="large" color="primary" />,
     isDisabled: false,
     url: "https://circuitriver.com",
     isClosedSource: true,
@@ -30,7 +38,7 @@ const projects = [
   {
     name: "Agendify - Android App",
     description: "Agenda app built with Java, PHP API, NodeJS WebSockets. (UNRELEASED)",
-    icon: "images/agendify.png",
+    icon: <LockIcon fontSize="large" color="primary" />,
     isDisabled: false,
     url: "#", // Not yet released, no link available yet
     isClosedSource: true,
@@ -63,70 +71,41 @@ const projects = [
     isDisabled: false,
     url: "https://github.com/abyssxd/vila2sat_serial",
   },
-
 ];
 
-const ProjectCard = ({ project, index }) => {
-    return (
-      <motion.div
-        initial={{ opacity: 0, y: 50 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4, delay: index * 0.2 }}
-        className="project-item"
-      >
-        <ListItem
-          className={`project-item ${project.isDisabled ? 'disabled' : ''}`}
-          component="a"
-          href={project.url}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ListItemIcon className="project-icon">
-            {typeof project.icon === 'string' ? (
-              <img src={project.icon} alt={`${project.name} Icon`} className="project-img" />
-            ) : (
-              project.icon
-            )}
-          </ListItemIcon>
-          <ListItemText
-            primary={
-              <Typography className="project-title">
-                {project.name}
-              </Typography>
-            }
-            secondary={
-              <>
-                <Typography className="project-description">
-                  {project.description}
-                </Typography>
-                {project.isClosedSource && (
-                  <Typography className="closed-source">(Closed Source)</Typography>
-                )}
-              </>
-            }
-          />
-        </ListItem>
-      </motion.div>
-    );
-  };
-  
+const ProjectCard = ({ project, index }) => (
+  <motion.div
+    className="project-card"
+    initial={{ opacity: 0, y: 30 }}
+    animate={{ opacity: 1, y: 0 }}
+    transition={{ duration: 0.3, delay: index * 0.1 }}
+  >
+    <a href={project.url} target="_blank" rel="noopener noreferrer" className="project-link">
+      <div className="project-image-container">
+        {typeof project.icon === "string" ? (
+          <img src={project.icon} alt={project.name} className="project-image" />
+        ) : (
+          <div className="project-icon">{project.icon}</div>
+        )}
+      </div>
+      <Typography variant="h5" className="project-title">{project.name}</Typography>
+      <Typography variant="body2" className="project-description">{project.description}</Typography>
+    </a>
+  </motion.div>
+);
 
-const Projects = () => {
-  return (
-    
-    <Box className="glassy">
-      <Typography variant="h4" gutterBottom>
-        Projects
-      </Typography>
-      <Grid container spacing={2} className="projects">
-        {projects.map((project, index) => (
-          <Grid item xs={12} sm={6} md={4} key={index}>
-            <ProjectCard project={project} index={index} />
-          </Grid>
-        ))}
-      </Grid>
-    </Box>
-  );
-};
+const Projects = () => (
+  <Box className="projects-container">
+    <Typography variant="h4" className="projects-header">Projects</Typography>
+    <br/>
+    <Grid container spacing={3}>
+      {projects.map((project, index) => (
+        <Grid item xs={12} sm={6} md={4} key={index}>
+          <ProjectCard project={project} index={index} />
+        </Grid>
+      ))}
+    </Grid>
+  </Box>
+);
 
 export default Projects;
