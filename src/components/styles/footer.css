@@ -1,6 +1,6 @@
 footer {
-  width: calc(100% + 60px); /* Accounts for the 30px padding on both sides */
-  margin-left: -30px; /* Neutralize body padding */
+  width: calc(100% + 60px); 
+  margin-left: -30px;
   height: 60px;
   background: var(--footer-bg);
   color: var(--footer-text-color);
