@@ -29,7 +29,6 @@ body[data-theme='dark'] {
 @media (max-width: 768px) {
   .footer {
     height: 50px;
-    padding: 0 1rem;
   }
 
   .footer-text {
