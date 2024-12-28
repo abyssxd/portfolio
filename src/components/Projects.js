@@ -74,6 +74,12 @@ const projects = {
       icon: "images/restaurant.jpg",
       url: "https://abishekbhusal.com/nmh",
     },
+    {
+      name: "Tutorial CMS Website",
+      description: "CMS website built with PHP, MySQL, HTML, CSS & JS.",
+      icon: <LockIcon fontSize="large" color="primary" />,
+      url: "https://circuitriver.com",
+    },
   ],
 };
 
