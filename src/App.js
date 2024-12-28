@@ -8,6 +8,7 @@ import SpokenLanguages from './components/SpokenLanguages';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import './App.css';
+import './components/styles/switch.css';
 
 function App() {
   const [isLightMode, setisLightMode] = useState(() => {
@@ -29,25 +30,25 @@ function App() {
     <div className="app-container">
       <Header toggleTheme={toggleTheme} isLightMode={isLightMode} />
       <main className="content">
-        <About />
-        <br />
-        <br />
-        <Projects />
-        <br />
-        <br />
-        <Experience />
-        <br />
-        <br />
-        <Languages />
-        <br />
-        <br />
-        <SpokenLanguages />
-        <br />
-        <br />
-        <Stats />
+        <section id="about">
+          <About />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="experience">
+          <Experience />
+        </section>
+        <section id="proglanguages">
+          <Languages />
+          </section>
+        <section id="languages">
+          <SpokenLanguages />
+        </section>
+        <section id="stats">
+          <Stats />
+        </section>
       </main>
-      <br />
-      <br />
       <Footer />
     </div>
   );

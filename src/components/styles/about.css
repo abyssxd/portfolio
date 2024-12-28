@@ -1,0 +1,4 @@
+.aboutContainer {
+    margin-top: 250px !important;
+    transition: margin-top 0.3s ease;
+}

@@ -1,15 +1,13 @@
 .stats-container {
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.05);
+    padding: 4rem;
     border-radius: 15px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
     text-align: center;
   }
   
   .stats-header {
     color: var(--title-color);
     font-weight: bold;
-    margin-bottom: 2rem;
+    margin-bottom: 3rem !important;
   }
   
   .stats-grid {

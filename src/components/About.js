@@ -1,10 +1,11 @@
 import React from 'react';
 import { Box, Typography, Container } from '@mui/material';
 import { motion } from 'framer-motion';
+import './styles/about.css';
 
 const About = () => {
   return (
-    <Container maxWidth="md" sx={{ marginTop: '4rem', textAlign: 'center' }}>
+    <Container className='aboutContainer' maxWidth="md" sx={{ marginTop: '4rem', textAlign: 'center' }}>
       <motion.div
         initial={{ opacity: 0, y: 50 }}
         animate={{ opacity: 1, y: 0 }}

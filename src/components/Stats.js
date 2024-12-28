@@ -21,7 +21,7 @@ const Stats = () => {
 
   return (
     <Box className="stats-container">
-      <Typography variant="h4" className="stats-header" gutterBottom>
+      <Typography variant="h3" className="stats-header" gutterBottom>
         GitHub Stats
       </Typography>
       <Box className="stats-grid">

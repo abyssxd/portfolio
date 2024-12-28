@@ -1,90 +1,89 @@
 .languages-container {
   padding: 2rem;
-  background: rgba(255, 255, 255, 0.05);
+  text-align: left;
   border-radius: 15px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
   color: var(--text-color);
-  text-align: center;
 }
 
 .languages-header {
   color: var(--title-color);
   font-weight: bold;
-  margin-bottom: 2rem;
+  text-align: center;
+  margin-bottom: 3rem !important;
 }
 
-.languages-grid {
+.spoken-languages-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.spoken-language-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  padding: 0.8rem 1rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  min-width: 220px;
+  max-width: 280px;
+  cursor: default;
+  transition: box-shadow 0.3s;
+}
+
+.spoken-language-item:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.highlight {
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.spoken-flag-container {
+  width: 50px;
+  height: 40px;
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
+  align-items: center;
+  border-radius: 8px;
 }
 
-.language-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 12px;
-  padding: 1rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+.spoken-flag {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.spoken-text-content {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  transition: transform 0.3s, box-shadow 0.3s;
+  align-items: flex-start;
 }
 
-.language-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 6px 25px rgba(0, 0, 0, 0.3);
-}
-
-.language-flag {
-  margin-bottom: 0.5rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 80px;
-  height: 40px;
-  overflow: hidden;
-  position: relative;
-}
-
-.flag-icon {
-  width: auto;
-  height: 100%;
-  object-fit: cover;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-}
-
-.language-flag.no-shadow .flag-icon {
-  box-shadow: none;
-}
-
-.language-chip {
-  font-size: 1rem;
+.spoken-language-label {
+  color: var(--text-color);
   font-weight: 600;
-  color: var(--text-color) !important;
-  padding: 0.5rem 1rem;
-  background: none;
+  margin: 0 0 0.2rem 0;
 }
 
-body[data-theme='light'] {
-  --text-color: #000;
-  --title-color: #333;
-  --chip-text-color: #444;
+.spoken-language-desc {
+  color: var(--text-color);
+  font-size: 0.85rem;
+  line-height: 1.2;
+  opacity: 0.9;
 }
 
-body[data-theme='dark'] {
-  --text-color: #fff;
-  --title-color: #ddd;
-  --chip-text-color: #ccc;
-}
-
-@media (max-width: 768px) {
-  .languages-grid {
-      flex-direction: column;
-      gap: 1rem;
+@media (max-width: 600px) {
+  .spoken-language-item {
+    min-width: 180px;
+    max-width: 200px;
+    padding: 0.6rem 0.8rem;
   }
 
-  .language-flag {
-      width: 40px;
-      height: 30px;
+  .spoken-flag-container {
+    width: 40px;
+    height: 30px;
   }
 }

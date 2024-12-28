@@ -1,61 +1,67 @@
 import React from 'react';
-import { Typography, Box, List, ListItem, ListItemIcon, ListItemText } from '@mui/material';
-import CodeIcon from '@mui/icons-material/Code';
-import BuildIcon from '@mui/icons-material/Build';
-import CloudIcon from '@mui/icons-material/Cloud';
-import RocketLaunchIcon from '@mui/icons-material/RocketLaunch';
-import AndroidIcon from '@mui/icons-material/Android';
+import { Typography, Box } from '@mui/material';
 import { motion } from 'framer-motion';
 import './styles/experience.css';
 
-const Experience = () => {
-  const experiences = [
-    {
-      icon: <CodeIcon style={{ color: '#0078d7' }} />,
-      text: 'Created several personal web applications using HTML, CSS, JS, ReactJS, PHP & MySQL.',
-    },
-    {
-      icon: <BuildIcon style={{ color: '#ff6f61' }} />,
-      text: 'Developed Minecraft plugins using the Spigot API.',
-    },
-    {
-      icon: <CloudIcon style={{ color: '#00bcd4' }} />,
-      text: 'Setup & configured Minecraft Server networks using Spigot & GeyserMC.',
-    },
-    {
-      icon: <RocketLaunchIcon style={{ color: '#ff9800' }} />,
-      text: 'Worked on Arduino, ESP32 Projects, and participated in the CanSat 2024 competition with the Vila2Sat team.',
-    },
-    {
-      icon: <AndroidIcon style={{ color: '#4caf50' }} />,
-      text: 'Working on a native Android app for my bachillerato research project.',
-    },
-  ];
+const experiences = [
+  {
+    year: "1 Year+",
+    title: "React",
+    projects: ["Restaurant Website", "BlockBase"],
+  },
+  {
+    year: "1 Year+",
+    title: "Node.js",
+    projects: ["Cansat Dashboard (Node.js)", "Agendify"],
+  },
+  {
+    year: "2 Years+",
+    title: "Java",
+    projects: ["Agendify", "UltraBoomerangs"],
+  },
+  {
+    year: "4 Years+",
+    title: "MySQL",
+    projects: ["Used across multiple projects"],
+  },
+  {
+    year: "4 Years+",
+    title: "HTML, CSS, PHP",
+    projects: ["Tutorial CMS Website", "Portfolio Website"],
+  },
+];
 
+const Experience = () => {
   return (
-    <Box className="experience-container">
-      <Typography variant="h4" className="experience-header" gutterBottom>
-        Experience
+    <Box className="timeline-container">
+      <Typography variant="h3" className="timeline-header" gutterBottom>
+        Experience Timeline
       </Typography>
-      <List className="experience-list">
-        {experiences.map((experience, index) => (
+
+      <Box className="timeline">
+        {experiences.map((exp, index) => (
           <motion.div
             key={index}
-            className="experience-item"
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
+            className={`timeline-item ${index % 2 === 0 ? 'left' : 'right'}`}
+            initial={{ opacity: 0, y: 50 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             transition={{ duration: 0.5, delay: index * 0.2 }}
           >
-            <ListItem className="experience-card">
-              <ListItemIcon className="experience-icon">{experience.icon}</ListItemIcon>
-              <ListItemText
-                primary={experience.text}
-                classes={{ primary: 'experience-text' }}
-              />
-            </ListItem>
+            <Box className="timeline-content">
+              <Typography variant="h5" className="timeline-title">
+                {exp.title}
+              </Typography>
+              <Typography variant="body2" className="timeline-year">
+                {exp.year}
+              </Typography>
+              <Typography variant="body2" className="timeline-projects">
+                Projects: {exp.projects.join(", ")}
+              </Typography>
+            </Box>
           </motion.div>
         ))}
-      </List>
+      </Box>
     </Box>
   );
 };
