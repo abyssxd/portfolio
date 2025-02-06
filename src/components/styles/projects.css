@@ -74,6 +74,13 @@
   z-index: 1500;
 }
 
+@media (max-width: 768px) {
+  .project-modal {
+    max-width: 70%;
+  }
+}
+
+
 .modal-title {
   font-size: 1.5rem;
   font-weight: bold;

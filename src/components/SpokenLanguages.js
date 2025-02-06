@@ -10,7 +10,7 @@ const SpokenLanguages = () => {
       label: "Nepali - Native",
       flag: "https://flagpedia.net/data/flags/h80/np.png",
       isSpecial: true,
-      description: "Official language of Nepal, spoken by over 16 million people."
+      description: "Official language of Nepal, spoken by over 32 million people."
     },
     {
       label: "English - C1",

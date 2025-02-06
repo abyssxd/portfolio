@@ -7,6 +7,36 @@ import './styles/projects.css';
 const projects = {
   ownProjects: [
     {
+      name: "Cansat V2",
+      description: "An improved single version of my previous Cansat Dashboard. ",
+      icon: <CodeIcon color="primary" />,
+      url: "https://github.com/abyssxd/CanSat-v2",
+    },
+    {
+      name: "Minecraft Java2Bedrock AIO",
+      description: "All in one Minecraft Java to Bedrock texture pack converter.",
+      icon: "images/5dots.png",
+      url: "https://abishekbhusal.com/java2bedrock",
+    },
+    {
+      name: "Minecraft Bedrock GUI Editor",
+      description: "Effortlessly create custom GUI textures for Minecraft Bedrock Edition.",
+      icon: "images/5dots.png",
+      url: "https://abishekbhusal.com/j2b_gui",
+    },
+    {
+      name: "Minecraft Bedrock Font Editor",
+      description: "Effortlessly create custom font textures for Minecraft Bedrock Edition.",
+      icon: "images/5dots.png",
+      url: "https://abishekbhusal.com/font-editor",
+    },
+    {
+      name: "Minecraft Java2Bedrock Font Converter",
+      description: "Automatically convert Minecraft Java font textures/emojis to Bedrock.",
+      icon: "images/5dots.png",
+      url: "https://abishekbhusal.com/font-converter",
+    },
+    {
       name: "UltraMonitor Spigot Plugin",
       description: "Web-Based Server Monitor & Panel",
       icon: "images/5dots.png",
