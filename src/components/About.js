@@ -17,7 +17,7 @@ const About = () => {
           </Typography>
           <Typography variant="body1" sx={{ fontSize: '1.2rem', lineHeight: 1.8 }}>
             I'm an 18-year-old developer with an interest in Web, App, and Game development.
-            Currently, I'm studying the first year of Spanish Baccalaureate at Institut Viladomat in
+            Currently, I'm studying the second year of Spanish Baccalaureate at Institut Viladomat in
             Barcelona, Spain. I'm passionate about creating innovative solutions and improving
             user experiences through technology.
           </Typography>
