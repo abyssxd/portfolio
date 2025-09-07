@@ -23,7 +23,6 @@ export default function Hero() {
         </motion.p>
 
         <motion.div className="hero-contacts" variants={item}>
-          <a className="cta" href="mailto:abish3kbhusal@gmail.com" aria-label="Email Abishek">Email</a>
           <a className="cta" href="https://github.com/abyssxd" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a className="cta" href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </motion.div>
