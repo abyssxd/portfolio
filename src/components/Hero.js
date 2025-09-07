@@ -19,7 +19,7 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p className="hero-about" variants={item}>
-          19 year old full‑stack developer focused on clean UX and efficient systems. I build web apps, tooling, and game‑adjacent projects with React, Node, and Java — shipping polished, fast experiences.
+          A 19 year old full‑stack developer focused on clean UX and efficient systems. I build web apps, tooling, and projects with React, Node, and Java — shipping polished, fast experiences.
         </motion.p>
 
         <motion.div className="hero-contacts" variants={item}>
