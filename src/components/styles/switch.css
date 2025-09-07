@@ -4,6 +4,7 @@
     overflow: hidden;
     width: 4rem;
     height: 2.75rem;
+    top: 6px;
   }
   
   .switch input {

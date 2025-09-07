@@ -1,98 +1,23 @@
-.prog-languages-container {
-  padding: 2rem;
-  text-align: left;
-}
-
-.prog-languages-header {
-  margin-bottom: 3rem !important;
-  font-weight: bold;
-  text-align: center;
-  color: var(--title-color);
-}
-
-.prog-languages-list {
-  display: flex;
-  flex-wrap: wrap;
+.prog-languages-container { padding: 4rem 5vw; }
+.prog-language-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0,1fr));
   gap: 1rem;
-  justify-content: center;
 }
-
-.prog-language-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
-  cursor: pointer;
-  transition: box-shadow 0.3s;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 220px;
-  max-width: 280px;
-}
-
-.prog-language-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.prog-icon-container {
-  width: 48px;
-  height: 48px;
-  flex-shrink: 0;
-  display: flex;
+.prog-language-card {
+  display: grid;
+  grid-template-columns: 54px 1fr;
+  gap: .8rem;
   align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+  padding: .8rem;
 }
+.prog-language-icon { width: 42px; height: 42px; object-fit: contain; filter: invert(0); }
+body[data-theme='dark'] .prog-language-icon { filter: brightness(0) invert(1); }
+.prog-language-meta h4 { margin: 0 0 .15rem; }
+.prog-language-meta p { margin: 0; color: var(--muted); font-size: .95rem; }
 
-.prog-language-icon {
-  width: 28px;
-  height: 28px;
-  object-fit: contain;
-}
-
-.prog-text-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.prog-language-name {
-  color: var(--text-color);
-  font-weight: 600;
-  margin: 0 0 0.2rem 0;
-}
-
-.prog-language-desc {
-  color: var(--text-color);
-  font-size: 0.85rem;
-  line-height: 1.2;
-  opacity: 0.9;
-}
-
-@media (max-width: 600px) {
-  .prog-language-item {
-    min-width: 180px;
-    max-width: 200px;
-    padding: 0.5rem 0.8rem;
-  }
-
-  .prog-icon-container {
-    width: 36px;
-    height: 36px;
-  }
-
-  .prog-language-icon {
-    width: 24px;
-    height: 24px;
-  }
-}
-
-body[data-theme="light"] .prog-language-icon {
-  filter: brightness(0);
-}
-
-body[data-theme="dark"] .prog-language-icon {
-  filter: brightness(0) invert(1);
-}
+@media (max-width: 900px) { .prog-language-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
+@media (max-width: 560px) { .prog-language-grid { grid-template-columns: 1fr; } }

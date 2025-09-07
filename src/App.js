@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Header from './components/Header';
+import Hero from './components/Hero';
 import About from './components/About';
 import Experience from './components/Experience';
 import Languages from './components/Languages';
@@ -8,6 +9,7 @@ import SpokenLanguages from './components/SpokenLanguages';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
 import './App.css';
+import './global.css';
 import './components/styles/switch.css';
 
 function App() {
@@ -30,6 +32,9 @@ function App() {
     <div className="app-container">
       <Header toggleTheme={toggleTheme} isLightMode={isLightMode} />
       <main className="content">
+        <section id="home">
+          <Hero />
+        </section>
         <section id="about">
           <About />
         </section>

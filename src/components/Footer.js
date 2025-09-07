@@ -1,15 +1,16 @@
 import React from 'react';
-import { Box, Typography } from '@mui/material';
 import './styles/footer.css';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <Box component="footer" className="footer">
-      <Typography variant="body2" className="footer-text">
-        © 2024-2025 Abishek Bhusal. All rights reserved.
-      </Typography>
-    </Box>
+    <footer id="contact">
+      <div className="footer-inner">
+        <p className="footer-text">© 2024–2025 Abishek Bhusal · Barcelona</p>
+        <div className="footer-links">
+          <a href="https://github.com/abyssxd" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        </div>
+      </div>
+    </footer>
   );
-};
-
-export default Footer;
+}

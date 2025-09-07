@@ -1,89 +1,22 @@
-.languages-container {
-  padding: 2rem;
-  text-align: left;
-  border-radius: 15px;
-  color: var(--text-color);
-}
-
-.languages-header {
-  color: var(--title-color);
-  font-weight: bold;
-  text-align: center;
-  margin-bottom: 3rem !important;
-}
-
-.spoken-languages-list {
-  display: flex;
-  flex-wrap: wrap;
+.languages-container { padding: 4rem 5vw; }
+.spoken-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
   gap: 1rem;
-  justify-content: center;
 }
-
-.spoken-language-item {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.75rem;
-  background: rgba(255, 255, 255, 0.05);
-  border-radius: 8px;
-  padding: 0.8rem 1rem;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  min-width: 220px;
-  max-width: 280px;
-  cursor: default;
-  transition: box-shadow 0.3s;
-}
-
-.spoken-language-item:hover {
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
-.highlight {
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.spoken-flag-container {
-  width: 50px;
-  height: 40px;
-  display: flex;
-  justify-content: center;
+.spoken-language-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: .9rem;
   align-items: center;
-  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+  padding: .9rem;
 }
+.flag-container { width: 56px; height: 42px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--bg); place-items: center; }
+.flag-container img { width: 100%; height: 100%; object-fit: contain; }
+.spoken-language-label { margin: 0 0 .15rem; }
+.spoken-language-desc { margin: 0; color: var(--muted); }
 
-.spoken-flag {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-
-.spoken-text-content {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-}
-
-.spoken-language-label {
-  color: var(--text-color);
-  font-weight: 600;
-  margin: 0 0 0.2rem 0;
-}
-
-.spoken-language-desc {
-  color: var(--text-color);
-  font-size: 0.85rem;
-  line-height: 1.2;
-  opacity: 0.9;
-}
-
-@media (max-width: 600px) {
-  .spoken-language-item {
-    min-width: 180px;
-    max-width: 200px;
-    padding: 0.6rem 0.8rem;
-  }
-
-  .spoken-flag-container {
-    width: 40px;
-    height: 30px;
-  }
-}
+@media (max-width: 720px) { .spoken-language-grid { grid-template-columns: 1fr; } }

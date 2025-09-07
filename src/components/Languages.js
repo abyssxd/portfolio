@@ -1,84 +1,39 @@
-// Languages.js
-import React from "react";
-import { Typography, Box } from "@mui/material";
-import { motion } from "framer-motion";
-import "./styles/prog_lang.css";
+import React from 'react';
+import { motion } from 'framer-motion';
+import './styles/prog_lang.css';
 
-const Languages = () => {
-  const languages = [
-    {
-      name: "Java",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/java.svg",
-      description: "Versatile OOP language, popular for enterprise software."
-    },
-    {
-      name: "MySQL",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg",
-      description: "Relational database management system for structured data."
-    },
-    {
-      name: "Python",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg",
-      description: "High-level language known for simplicity and powerful libraries."
-    },
-    {
-      name: "PHP",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/php.svg",
-      description: "Popular server-side scripting for dynamic web applications."
-    },
-    {
-      name: "Javascript",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg",
-      description: "Main language of the web, used for interactive frontends."
-    },
-    {
-      name: "ReactJS",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/react.svg",
-      description: "A JS library for building modern, reusable UIs."
-    },
-    {
-      name: "HTML & CSS",
-      icon: "https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/html5.svg",
-      description: "Foundational technologies for structuring and styling webpages."
-    },
-  ];
+const skills = [
+  { name: 'Java', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/java.svg', desc: 'Versatile OOP for robust backends.' },
+  { name: 'Node.js', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/nodedotjs.svg', desc: 'APIs and servers in JavaScript.' },
+  { name: 'React', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/react.svg', desc: 'Fast, composable UIs.' },
+  { name: 'PHP', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/php.svg', desc: 'Server-side scripting.' },
+  { name: 'MySQL', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/mysql.svg', desc: 'Schema design and SQL queries.' },
+  { name: 'Bukkit API', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/minecraft.svg', desc: 'Minecraft plugin development.' },
+  { name: 'HTML5', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/html5.svg', desc: 'Semantic, accessible markup.' },
+  { name: 'CSS3', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/css3.svg', desc: 'Responsive layouts and styling.' },
+  { name: 'JavaScript', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/javascript.svg', desc: 'ES6+, DOM, async.' },
+  { name: 'Python', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/python.svg', desc: 'Scripting and automation.' },
+  { name: 'Android Studio & API', icon: 'https://cdn.jsdelivr.net/npm/simple-icons@v5/icons/androidstudio.svg', desc: 'Built a research-project app.' },
+];
 
+
+const variants = { grid: { show: { transition: { staggerChildren: .05 } } }, card: { hidden: { opacity: 0, y: 16 }, show: { opacity: 1, y: 0 } } };
+
+export default function Languages() {
   return (
-    <Box className="prog-languages-container">
-      <Typography variant="h3" className="prog-languages-header" gutterBottom>
-        Programming Languages
-      </Typography>
-
-      <Box className="prog-languages-list">
-        {languages.map((lang, index) => (
-          <motion.div
-            key={index}
-            className="prog-language-item"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.3, delay: index * 0.1 }}
-            whileHover={{ scale: 1.03 }}
-          >
-            <div className="prog-icon-container">
-              <img
-                src={lang.icon}
-                alt={`${lang.name} icon`}
-                className="prog-language-icon"
-              />
+    <section className="prog-languages-container" id="proglanguages">
+      <h2 className="section-title">Skills & Tools</h2>
+      <motion.div className="prog-language-grid" variants={variants.grid} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-80px' }}>
+        {skills.map((s) => (
+          <motion.article className="prog-language-card" key={s.name} variants={variants.card}>
+            <img src={s.icon} alt={s.name} className="prog-language-icon" />
+            <div className="prog-language-meta">
+              <h4>{s.name}</h4>
+              <p>{s.desc}</p>
             </div>
-            <div className="prog-text-content">
-              <Typography variant="h6" className="prog-language-name">
-                {lang.name}
-              </Typography>
-              <Typography variant="body2" className="prog-language-desc">
-                {lang.description}
-              </Typography>
-            </div>
-          </motion.div>
+          </motion.article>
         ))}
-      </Box>
-    </Box>
+      </motion.div>
+    </section>
   );
-};
-
-export default Languages;
+}

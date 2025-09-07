@@ -1,4 +1,33 @@
-.aboutContainer {
-    margin-top: 250px !important;
-    transition: margin-top 0.3s ease;
+.about-section { padding: 4rem 5vw; }
+.about-card {
+  margin: 0 auto;
+  max-width: 900px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+.section-title {
+  font-size: clamp(1.6rem, 3.2vw, 2rem);
+  margin: 0 0 .75rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+.about-text {
+  color: var(--muted);
+  line-height: 1.8;
+  margin: 0 0 1.25rem;
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: .75rem 1rem;
+}
+.about-grid .k {
+  display: block;
+  font-size: .8rem; color: var(--muted);
+}
+.about-grid .v { font-weight: 600; }
+@media (max-width: 700px) {
+  .about-grid { grid-template-columns: 1fr; }
 }

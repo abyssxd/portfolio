@@ -1,128 +1,80 @@
-import React, { useState, useEffect } from 'react';
-import { Box, Typography, Avatar, IconButton } from '@mui/material';
-import { GitHub, LinkedIn, Instagram, Menu, Close } from '@mui/icons-material';
-import { motion } from 'framer-motion';
+import React, { useEffect, useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import './styles/header.css';
 
-const Header = ({ toggleTheme, isLightMode }) => {
-  const [isScrolled, setIsScrolled] = useState(false);
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+const links = [
+  { href: '#home', label: 'Home' },
+  { href: '#about', label: 'About' },
+  { href: '#projects', label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#proglanguages', label: 'Skills' },
+  { href: '#languages', label: 'Languages' },
+  { href: '#stats', label: 'Stats' },
+];
+
+export default function Header({ toggleTheme, isLightMode }) {
+  const [scrolled, setScrolled] = useState(false);
+  const [open, setOpen] = useState(false);
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 200);
-    };
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const onScroll = () => setScrolled(window.scrollY > 16);
+    window.addEventListener('scroll', onScroll);
+    return () => window.removeEventListener('scroll', onScroll);
   }, []);
 
-  const toggleMenu = () => {
-    setIsMenuOpen((prev) => !prev);
-  };
-
   return (
-    <motion.header
-      className={`header-container ${isScrolled ? 'header-shrink' : 'header-large'}`}
-    >
-      {/* Left: Profile and Name */}
-      <Box className="header-left">
-        <Avatar
-          alt="Abishek Bhusal"
-          src="images/pfp.webp"
-          className="profile-avatar"
-        />
-        <Typography className="header-name">
-          Abishek Bhusal
-        </Typography>
-      </Box>
+    <header className={['header-container', scrolled ? 'header-shrink' : ''].join(' ')}>
+      <div className="nav-wrap">
+        <a href="#home" className="brand">Abishek<span className="dot">.</span></a>
 
-      {/* Right: Desktop Social Icons & Toggle */}
-      <Box
-        className={`header-right desktop-only ${
-          isScrolled ? 'hide-desktop-icons' : ''
-        }`}
-      >
-        <Box className="social-icons">
-          <IconButton aria-label="GitHub" href="https://github.com/abyssxd" target="_blank">
-            <GitHub fontSize="medium" />
-          </IconButton>
-          <IconButton aria-label="LinkedIn" href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank">
-            <LinkedIn fontSize="medium" />
-          </IconButton>
-          <IconButton aria-label="Instagram" href="https://instagram.com/abisgamer_" target="_blank">
-            <Instagram fontSize="medium" />
-          </IconButton>
-        </Box>
-        <Box className="switch">
-          <label htmlFor="toggle">
+        <nav className="nav-desktop">
+          {links.map((l) => (
+            <a key={l.href} href={l.href} className="nav-link">{l.label}</a>
+          ))}
+        </nav>
+
+        <div className="right-controls">
+          <label htmlFor="toggle" className="switch">
             <input
               id="toggle"
               className="toggle-switch"
               type="checkbox"
               checked={isLightMode}
               onChange={toggleTheme}
+              aria-label="Toggle theme"
             />
-            <div className="sun-moon">
-              <div className="dots"></div>
-            </div>
-            <div className="background">
-              <div className="stars1"></div>
-              <div className="stars2"></div>
-            </div>
+            <div className="sun-moon"><div className="dots" /></div>
+            <div className="background"><div className="stars1" /><div className="stars2" /></div>
           </label>
-        </Box>
-      </Box>
 
-      {/* Right: Mobile Menu Icon */}
-      {isScrolled && (
-        <Box className="header-right mobile-only">
-          <IconButton className="tog-mob" onClick={toggleMenu}>
-            {isMenuOpen ? <Close fontSize="large" /> : <Menu fontSize="large" />}
-          </IconButton>
-        </Box>
-      )}
+          <button
+            className="hamburger"
+            aria-label="Open menu"
+            aria-expanded={open}
+            onClick={() => setOpen(!open)}
+          >
+            <span />
+            <span />
+            <span />
+          </button>
+        </div>
+      </div>
 
-      {/* Mobile Menu */}
-      {isMenuOpen && (
-        <motion.nav
-          className="mobile-menu"
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.3 }}
-        >
-          <Box className="social-icons-mobile">
-            <IconButton aria-label="GitHub" href="https://github.com/abyssxd" target="_blank">
-              <GitHub fontSize="medium" />
-            </IconButton>
-            <IconButton aria-label="LinkedIn" href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank">
-              <LinkedIn fontSize="medium" />
-            </IconButton>
-            <IconButton aria-label="Instagram" href="https://instagram.com/abisgamer_" target="_blank">
-              <Instagram fontSize="medium" />
-            </IconButton>
-          </Box>
-          <Box className="switch">
-            <label htmlFor="toggle">
-              <input
-                id="toggle"
-                className="toggle-switch"
-                type="checkbox"
-                checked={isLightMode}
-                onChange={toggleTheme}
-              />
-              <div className="sun-moon">
-                <div className="dots"></div>
-              </div>
-              <div className="background">
-                <div className="stars1"></div>
-                <div className="stars2"></div>
-              </div>
-            </label>
-          </Box>
-        </motion.nav>
-      )}
-    </motion.header>
+      <AnimatePresence>
+        {open && (
+          <motion.nav
+            className="nav-mobile"
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: 'auto', opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.25, ease: 'easeOut' }}
+          >
+            {links.map((l) => (
+              <a key={l.href} href={l.href} className="nav-link" onClick={() => setOpen(false)}>{l.label}</a>
+            ))}
+          </motion.nav>
+        )}
+      </AnimatePresence>
+    </header>
   );
-};
-
-export default Header;
+}
