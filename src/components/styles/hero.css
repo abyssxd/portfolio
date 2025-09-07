@@ -107,9 +107,6 @@
   .portrait-wrap { 
     max-width: clamp(240px, 60vw, 420px);
     margin: 0 auto;
-    border: 1px dashed var(--border);
-    border-radius: 8px;
-    padding: 8px;
   }
   .hero-left {
       text-align: center;
