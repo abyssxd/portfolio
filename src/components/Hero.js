@@ -2,40 +2,79 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import './styles/hero.css';
 
-const container = {
-  hidden: { opacity: 0, y: 24 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut', staggerChildren: 0.08 } }
-};
-const item = { hidden: { opacity: 0, y: 24 }, show: { opacity: 1, y: 0, transition: { duration: 0.5 } } };
-
-const photo = { hidden: { opacity: 0, scale: 0.96, y: 24 }, show: { opacity: 1, scale: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut', delay: 0.2 } } };
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 28 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1], delay },
+});
 
 export default function Hero() {
   return (
-    <section className="hero" aria-label="Intro">
-      <motion.div className="hero-left" variants={container} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.1, margin: '-60px' }}>
-        <motion.h1 className="hero-name" variants={item}>
-          Abishek Bhusal
-        </motion.h1>
-
-        <motion.p className="hero-about" variants={item}>
-          A 19 year old full‑stack developer focused on clean UX and efficient systems. I build web apps, tooling, and projects with React, Node, and Java — shipping polished, fast experiences.
+    <section className="hero" aria-label="Introduction">
+      <motion.div
+        className="hero-left"
+        initial="initial"
+        animate="animate"
+      >
+        <motion.p className="hero-eyebrow" {...fadeUp(0.1)}>
+          Full-Stack Developer
         </motion.p>
 
-        <motion.div className="hero-contacts" variants={item}>
-          <a className="cta" href="https://github.com/abyssxd" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a className="cta" href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <motion.h1 className="hero-name" {...fadeUp(0.2)}>
+          Abishek
+          <span className="hero-name-outline"> Bhusal</span>
+        </motion.h1>
+
+        <motion.p className="hero-tagline" {...fadeUp(0.35)}>
+          19-year-old developer based in Barcelona. I build web apps, tooling, and
+          polished experiences with React, Node, and Java — focused on clean UX and efficient systems.
+        </motion.p>
+
+        <motion.div className="hero-ctas" {...fadeUp(0.45)}>
+          <a
+            className="cta cta-primary"
+            href="https://github.com/abyssxd"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            GitHub ↗
+          </a>
+          <a
+            className="cta cta-ghost"
+            href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            LinkedIn ↗
+          </a>
+          <a className="cta cta-ghost" href="#projects">
+            See my work
+          </a>
         </motion.div>
 
-        <motion.p className="hero-subtle" variants={item}>Barcelona · Available for internships & freelance</motion.p>
+        <motion.div className="hero-meta" {...fadeUp(0.55)}>
+          <span className="hero-meta-dot" aria-hidden="true" />
+          Barcelona, ES · Available for internships &amp; freelance
+        </motion.div>
       </motion.div>
 
-      <div className="hero-right">
-        <motion.div className="portrait-wrap" variants={photo} initial="hidden" whileInView="show" viewport={{ once: false, amount: 0.1, margin: '-60px' }}>
-          <motion.img src="images/portrait.png" alt="Abishek crossing arms" className="portrait" whileHover={{ scale: 1.015 }} transition={{ type: 'spring', stiffness: 150, damping: 18 }} />
-          <div className="portrait-ring" aria-hidden="true" />
-        </motion.div>
-      </div>
+      <motion.div
+        className="hero-right"
+        initial={{ opacity: 0, scale: 0.95, y: 20 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1], delay: 0.25 }}
+      >
+        <div className="portrait-wrap">
+          <motion.img
+            src="images/portrait.png"
+            alt="Abishek Bhusal"
+            className="portrait"
+            whileHover={{ scale: 1.02 }}
+            transition={{ type: 'spring', stiffness: 180, damping: 20 }}
+          />
+          <div className="portrait-accent" aria-hidden="true" />
+        </div>
+      </motion.div>
     </section>
   );
 }

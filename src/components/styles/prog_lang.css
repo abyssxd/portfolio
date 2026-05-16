@@ -1,23 +1,74 @@
-.prog-languages-container { padding: 4rem 5vw; }
-.prog-language-grid {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 1rem;
+/* ── Skills ── */
+.skills-section {
+  padding: 4.5rem 1.5rem;
+  border-top: 1px solid var(--border);
 }
-.prog-language-card {
-  display: grid;
-  grid-template-columns: 54px 1fr;
-  gap: .8rem;
-  align-items: center;
-  border: 1px solid var(--border);
-  background: var(--card);
-  border-radius: 16px;
-  padding: .8rem;
-}
-.prog-language-icon { width: 42px; height: 42px; object-fit: contain; filter: invert(0); }
-body[data-theme='dark'] .prog-language-icon { filter: brightness(0) invert(1); }
-.prog-language-meta h4 { margin: 0 0 .15rem; }
-.prog-language-meta p { margin: 0; color: var(--muted); font-size: .95rem; }
 
-@media (max-width: 900px) { .prog-language-grid { grid-template-columns: repeat(2, minmax(0,1fr)); } }
-@media (max-width: 560px) { .prog-language-grid { grid-template-columns: 1fr; } }
+.skills-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.skill-card {
+  padding: 1.25rem;
+  background: var(--bg-card);
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  transition: background 0.2s;
+  cursor: default;
+}
+
+.skill-card:hover { background: var(--bg-elevated); }
+
+.skill-icon {
+  width: 26px;
+  height: 26px;
+  flex-shrink: 0;
+  filter: brightness(0) invert(0.55);
+  transition: filter 0.2s;
+}
+
+body[data-theme='light'] .skill-icon {
+  filter: brightness(0) invert(0.35);
+}
+
+.skill-card:hover .skill-icon {
+  filter: brightness(0) invert(0.78);
+}
+
+body[data-theme='light'] .skill-card:hover .skill-icon {
+  filter: brightness(0) invert(0.2);
+}
+
+.skill-info {}
+
+.skill-name {
+  font-family: var(--font-display);
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.01em;
+}
+
+.skill-desc {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin-top: 0.15rem;
+}
+
+@media (max-width: 480px) {
+  .skills-grid { grid-template-columns: 1fr 1fr; }
+}

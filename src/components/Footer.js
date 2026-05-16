@@ -3,12 +3,17 @@ import './styles/footer.css';
 
 export default function Footer() {
   return (
-    <footer id="contact">
+    <footer className="footer" id="contact">
       <div className="footer-inner">
-        <p className="footer-text">© 2024–2025 Abishek Bhusal · Barcelona</p>
+        <div>
+          <div className="footer-brand">AB<span>.</span></div>
+          <div className="footer-copy">© 2024–2026 Abishek Bhusal · Barcelona</div>
+        </div>
+
         <div className="footer-links">
-          <a href="https://github.com/abyssxd" target="_blank" rel="noopener noreferrer">GitHub</a>
-          <a href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a className="footer-link" href="mailto:abishekbhusal@proton.me">Email</a>
+          <a className="footer-link" href="https://github.com/abyssxd" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a className="footer-link" href="https://www.linkedin.com/in/abishek-bhusal-b5690732a/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         </div>
       </div>
     </footer>

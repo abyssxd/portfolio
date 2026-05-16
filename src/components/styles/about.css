@@ -1,33 +1,81 @@
-.about-section { padding: 4rem 5vw; }
-.about-card {
+/* ── About ── */
+.about-section {
+  padding: 4.5rem 1.5rem;
+  border-top: 1px solid var(--border);
+}
+
+.about-inner {
+  max-width: var(--max-w);
   margin: 0 auto;
-  max-width: 900px;
-  background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 20px;
-  padding: clamp(1.25rem, 3vw, 2rem);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: start;
 }
-.section-title {
-  font-size: clamp(1.6rem, 3.2vw, 2rem);
-  margin: 0 0 .75rem;
-  font-weight: 800;
-  letter-spacing: -0.01em;
-}
-.about-text {
-  color: var(--muted);
+
+.about-text-block {}
+
+.about-body {
+  font-size: 1rem;
+  color: var(--text-muted);
   line-height: 1.8;
-  margin: 0 0 1.25rem;
+  margin-bottom: 1.5rem;
 }
+
+.about-body strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+.about-body + .about-body {
+  margin-top: -0.5rem;
+}
+
+/* Info grid */
 .about-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0,1fr));
-  gap: .75rem 1rem;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 2rem;
 }
-.about-grid .k {
-  display: block;
-  font-size: .8rem; color: var(--muted);
+
+.about-grid-item {
+  padding: 1rem 1.25rem;
+  background: var(--bg-card);
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
 }
-.about-grid .v { font-weight: 600; }
-@media (max-width: 700px) {
-  .about-grid { grid-template-columns: 1fr; }
+
+.about-grid-item:nth-child(even) {
+  border-left: 1px solid var(--border);
+}
+
+.about-grid-item:nth-child(n+3) {
+  border-top: 1px solid var(--border);
+}
+
+.about-key {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.about-val {
+  font-family: var(--font-display);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+}
+
+@media (max-width: 768px) {
+  .about-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 }

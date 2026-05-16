@@ -8,34 +8,51 @@ import Stats from './components/Stats';
 import SpokenLanguages from './components/SpokenLanguages';
 import Projects from './components/Projects';
 import Footer from './components/Footer';
-import './global.css';
 import './App.css';
+import './global.css';
 import './components/styles/switch.css';
 
 function App() {
   const [isLightMode, setisLightMode] = useState(() => {
-    const saved = localStorage.getItem('theme');
-    return saved === 'light';
+    const savedTheme = localStorage.getItem('theme');
+    return savedTheme === 'light';
   });
 
   useEffect(() => {
-    document.body.setAttribute('data-theme', isLightMode ? 'light' : 'dark');
-    localStorage.setItem('theme', isLightMode ? 'light' : 'dark');
+    const theme = isLightMode ? 'light' : 'dark';
+    document.body.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
   }, [isLightMode]);
 
-  const toggleTheme = () => setisLightMode(p => !p);
+  const toggleTheme = () => {
+    setisLightMode((prevMode) => !prevMode);
+  };
 
   return (
     <div className="app-container">
       <Header toggleTheme={toggleTheme} isLightMode={isLightMode} />
       <main className="content">
-        <section id="home"><Hero /></section>
-        <section id="about"><About /></section>
-        <section id="projects"><Projects /></section>
-        <section id="experience"><Experience /></section>
-        <section id="proglanguages"><Languages /></section>
-        <section id="languages"><SpokenLanguages /></section>
-        <section id="stats"><Stats /></section>
+        <section id="home">
+          <Hero />
+        </section>
+        <section id="about">
+          <About />
+        </section>
+        <section id="projects">
+          <Projects />
+        </section>
+        <section id="experience">
+          <Experience />
+        </section>
+        <section id="proglanguages">
+          <Languages />
+          </section>
+        <section id="languages">
+          <SpokenLanguages />
+        </section>
+        <section id="stats">
+          <Stats />
+        </section>
       </main>
       <Footer />
     </div>

@@ -1,0 +1,22 @@
+.languages-container { padding: 4rem 5vw; }
+.spoken-language-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0,1fr));
+  gap: 1rem;
+}
+.spoken-language-card {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  gap: .9rem;
+  align-items: center;
+  border: 1px solid var(--border);
+  background: var(--card);
+  border-radius: 16px;
+  padding: .9rem;
+}
+.flag-container { width: 56px; height: 42px; border-radius: 10px; overflow: hidden; border: 1px solid var(--border); background: var(--bg); place-items: center; }
+.flag-container img { width: 100%; height: 100%; object-fit: contain; }
+.spoken-language-label { margin: 0 0 .15rem; }
+.spoken-language-desc { margin: 0; color: var(--muted); }
+
+@media (max-width: 720px) { .spoken-language-grid { grid-template-columns: 1fr; } }
