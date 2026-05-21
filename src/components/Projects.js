@@ -44,7 +44,7 @@ function ProjectGrid({ items, onSelect }) {
               {p.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
               {p.discontinued && <span className="chip chip-muted">Discontinued</span>}
             </div>
-            <span className="project-arrow">↗</span>
+            <span className="project-arrow">↗︎︎</span>
           </div>
         </motion.article>
       ))}
@@ -68,7 +68,7 @@ export default function Projects() {
               <h3 className="featured-name">{featured.name}</h3>
               <p className="featured-tagline">{featured.tagline}</p>
             </div>
-            <a className="cta cta-primary featured-cta" href={featured.url} target="_blank" rel="noopener noreferrer">Visit site ↗</a>
+            <a className="cta cta-primary featured-cta" href={featured.url} target="_blank" rel="noopener noreferrer">Visit site ↗︎︎</a>
           </div>
           <p className="featured-desc">{featured.description}</p>
           <div className="featured-features">
@@ -108,7 +108,7 @@ export default function Projects() {
                 {active.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
               </div>
               <div className="modal-actions">
-                {active.url && <a className="cta cta-primary" href={active.url} target="_blank" rel="noopener noreferrer">Open project ↗</a>}
+                {active.url && <a className="cta cta-primary" href={active.url} target="_blank" rel="noopener noreferrer">Open project ↗︎︎</a>}
                 <button className="cta cta-ghost" onClick={() => setActive(null)}>Close</button>
               </div>
             </motion.div>

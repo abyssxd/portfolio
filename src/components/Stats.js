@@ -92,7 +92,7 @@ export default function Stats() {
                 target="_blank" rel="noopener noreferrer"
                 className="stat-card-link"
               >
-                @{USERNAME} ↗
+                @{USERNAME} ↗︎
               </a>
             </div>
             <div className="stat-card-body">

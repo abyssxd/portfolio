@@ -37,7 +37,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub ↗
+            GitHub ↗︎
           </a>
           <a
             className="cta cta-ghost"
@@ -45,7 +45,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn ↗
+            LinkedIn ↗︎
           </a>
           <a className="cta cta-ghost" href="#projects">
             See my work

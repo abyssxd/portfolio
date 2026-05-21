@@ -28,7 +28,7 @@ export default function About() {
           <motion.p className="about-body" variants={fadeUp}>
             I'm a 19-year-old developer who cares deeply about <strong>clarity</strong>,{' '}
             <strong>performance</strong>, and <strong>design</strong>. I turn complex ideas into simple,
-            delightful products — from interactive dashboards to game plugins.
+            delightful products, from interactive dashboards to game plugins.
           </motion.p>
           <motion.p className="about-body" variants={fadeUp}>
             Recently I've been building dashboards, tooling, and website projects while pushing into
