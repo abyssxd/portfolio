@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from './icons';
 import './styles/stats.css';
 
 const USERNAME = 'abyssxd';
@@ -82,7 +83,7 @@ export default function Stats() {
                 rel="noopener noreferrer"
                 className="stat-card-link"
               >
-                @{USERNAME} ↗
+                @{USERNAME} <ArrowUpRight />
               </a>
             </div>
 

@@ -124,6 +124,19 @@ button { font-family: var(--font-body); cursor: pointer; }
   letter-spacing: -0.025em;
 }
 
+@media (max-width: 640px) {
+  .about-section,
+  .projects-section,
+  .timeline-section,
+  .skills-section,
+  .spoken-section,
+  .stats-section {
+    padding: 3rem 1.25rem;
+  }
+
+  .section-heading { margin-bottom: 1.25rem; }
+}
+
 /* ── CTA buttons ── */
 .cta {
   display: inline-flex;

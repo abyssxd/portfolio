@@ -84,7 +84,9 @@
 }
 
 .project-arrow {
-  font-size: 0.8rem;
+  width: 0.95rem;
+  height: 0.95rem;
+  flex-shrink: 0;
   color: var(--text-muted);
   transition: color 0.2s, transform 0.2s;
 }

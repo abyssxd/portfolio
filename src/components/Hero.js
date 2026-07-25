@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from './icons';
 import './styles/hero.css';
 
 const fadeUp = (delay = 0) => ({
@@ -37,7 +38,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub ↗
+            GitHub <ArrowUpRight />
           </a>
           <a
             className="cta cta-ghost"
@@ -45,7 +46,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn ↗
+            LinkedIn <ArrowUpRight />
           </a>
           <a className="cta cta-ghost" href="#projects">
             See my work

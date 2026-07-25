@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { ArrowUpRight } from './icons';
 import './styles/projects.css';
 
 const featured = {
@@ -42,7 +43,7 @@ function CardBody({ project }) {
           {project.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
           {project.discontinued && <span className="chip chip-muted">Discontinued</span>}
         </div>
-        {project.url && <span className="project-arrow" aria-hidden="true">↗</span>}
+        {project.url && <ArrowUpRight className="project-arrow" />}
       </div>
     </>
   );
@@ -100,7 +101,7 @@ export default function Projects() {
               <p className="featured-tagline">{featured.tagline}</p>
             </div>
             <a className="cta cta-primary featured-cta" href={featured.url} target="_blank" rel="noopener noreferrer">
-              Visit site ↗
+              Visit site <ArrowUpRight />
             </a>
           </div>
           <p className="featured-desc">{featured.description}</p>
