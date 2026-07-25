@@ -20,7 +20,7 @@ const LANG_COLORS = {
 function StatCard({ label, value, sub }) {
   return (
     <div className="gh-stat-item">
-      <span className="gh-stat-val">{value ?? '—'}</span>
+      <span className="gh-stat-val">{value ?? '·'}</span>
       <span className="gh-stat-label">{label}</span>
       {sub && <span className="gh-stat-sub">{sub}</span>}
     </div>
@@ -44,7 +44,10 @@ export default function Stats() {
 
         setUser(uData);
 
-        // tally bytes per language
+        // the repos endpoint returns an object instead of an array when rate limited
+        if (!Array.isArray(repos)) return;
+
+        // rough weighting: repo size per language
         const totals = {};
         for (const r of repos) {
           if (r.language) totals[r.language] = (totals[r.language] || 0) + (r.size || 1);
@@ -59,17 +62,13 @@ export default function Stats() {
           color: LANG_COLORS[name] || '#888',
         })));
       } catch {
-        // fail silently — cards show — sign
+        setLangs([]);
       } finally {
         setLoading(false);
       }
     }
     load();
   }, []);
-
-  const totalStars = user
-    ? null  // stars need per-repo fetch; show repos instead
-    : null;
 
   return (
     <section className="stats-section">
@@ -79,7 +78,7 @@ export default function Stats() {
 
         <div className="stats-grid">
 
-          {/* Card 1 – profile numbers */}
+          {/* Profile numbers */}
           <motion.div
             className="stat-card"
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
@@ -108,7 +107,7 @@ export default function Stats() {
             </div>
           </motion.div>
 
-          {/* Card 2 – streak (demolab works reliably) */}
+          {/* Streak */}
           <motion.div
             className="stat-card stat-card-streak"
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
@@ -126,7 +125,7 @@ export default function Stats() {
             </div>
           </motion.div>
 
-          {/* Card 3 – top languages */}
+          {/* Top languages */}
           <motion.div
             className="stat-card"
             initial={{ opacity: 0, y: 16 }} whileInView={{ opacity: 1, y: 0 }}
@@ -140,7 +139,6 @@ export default function Stats() {
                 <div className="stat-skeleton-row"><div className="stat-skel"/><div className="stat-skel"/><div className="stat-skel"/></div>
               ) : (
                 <div className="lang-bars">
-                  {/* colour bar */}
                   <div className="lang-bar-track">
                     {langs.map(l => (
                       <div
@@ -151,7 +149,6 @@ export default function Stats() {
                       />
                     ))}
                   </div>
-                  {/* legend */}
                   <div className="lang-legend">
                     {langs.map(l => (
                       <div className="lang-legend-item" key={l.name}>

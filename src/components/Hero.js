@@ -17,7 +17,7 @@ export default function Hero() {
         animate="animate"
       >
         <motion.p className="hero-eyebrow" {...fadeUp(0.1)}>
-          Full-Stack Developer
+          Student · Universitat de Barcelona
         </motion.p>
 
         <motion.h1 className="hero-name" {...fadeUp(0.2)}>
@@ -26,8 +26,8 @@ export default function Hero() {
         </motion.h1>
 
         <motion.p className="hero-tagline" {...fadeUp(0.35)}>
-          19-year-old developer based in Barcelona. I build web apps, tooling, and
-          polished experiences with React, Node, and Java — focused on clean UX and efficient systems.
+          19-year-old student based in Barcelona, currently studying Ingeniería Informática at the
+          Universitat de Barcelona. I build web apps and small tools with React, Node, and Java.
         </motion.p>
 
         <motion.div className="hero-ctas" {...fadeUp(0.45)}>
@@ -54,7 +54,7 @@ export default function Hero() {
 
         <motion.div className="hero-meta" {...fadeUp(0.55)}>
           <span className="hero-meta-dot" aria-hidden="true" />
-          Barcelona, ES · Available for internships &amp; freelance
+          Barcelona, ES · Studying Ingeniería Informática at UB
         </motion.div>
       </motion.div>
 

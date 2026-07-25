@@ -4,9 +4,9 @@ import './styles/projects.css';
 
 const featured = {
   name: 'Kafal Converter',
-  tagline: 'Java → Bedrock resource pack converter',
+  tagline: 'Java to Bedrock resource pack converter',
   description:
-    'Convert Minecraft Java resource packs to Bedrock Edition with high-quality precision — animated 3D items, custom blocks, custom GUIs with a pixel-accurate offset editor, font conversion, Geyser V2 mappings, and more. Trusted by over 1,000 pack conversions.',
+    'Converts Minecraft Java resource packs to Bedrock Edition: animated 3D items, custom blocks, custom GUIs with a pixel-accurate offset editor, font conversion and Geyser V2 mappings. Over 1,000 packs converted so far.',
   url: 'https://kafal.pogmc.net',
   tags: ['React', 'Node.js'],
   stats: [
@@ -18,16 +18,16 @@ const featured = {
 };
 
 const ownProjects = [
-  { name: 'UltraBoomerangs', description: 'Minecraft plugin adding fully custom boomerangs with MMO plugin support (mcMMO, AuraSkills).', url: 'https://www.spigotmc.org/resources/ultraboomerangs-create-custom-unqiue-boomerangs-mcmmo-auraskills-support.113150/', tags: ['Java', 'Bukkit API'] },
-  { name: 'UltraCollections', description: 'Fully customizable progression plugin for RPG Minecraft servers. Published on SpigotMC.', url: 'https://www.spigotmc.org/resources/ultracollections-fully-customizable.121650/', tags: ['Java', 'Bukkit API'] },
-  { name: 'UltraMonitor', description: 'Web-based Minecraft server manager with a clean frontend and real-time console support.', url: 'https://www.spigotmc.org/resources/ultramonitor-%E2%AD%95-console-support-%E2%AD%95.121546/', tags: ['Java', 'Node', 'React'] },
-  { name: 'Cansat V2', description: 'Real-time data monitoring dashboard for CanSat sensors. React frontend, Node + Express backend.', url: 'https://github.com/abyssxd/CanSat-v2', tags: ['React', 'Node'] },
-  { name: 'Java2Bedrock Tools', description: 'Web-based converter that generates Bedrock Edition resource packs from Java Edition assets.', url: 'https://abishekbhusal.com/j2b_gui', tags: ['React', 'JS'] },
+  { name: 'UltraBoomerangs', description: 'Minecraft plugin that adds custom boomerangs, with support for mcMMO and AuraSkills.', url: 'https://www.spigotmc.org/resources/ultraboomerangs-create-custom-unqiue-boomerangs-mcmmo-auraskills-support.113150/', tags: ['Java', 'Bukkit API'] },
+  { name: 'UltraCollections', description: 'Configurable collections and progression plugin for RPG Minecraft servers. Published on SpigotMC.', url: 'https://www.spigotmc.org/resources/ultracollections-fully-customizable.121650/', tags: ['Java', 'Bukkit API'] },
+  { name: 'UltraMonitor', description: 'Web-based Minecraft server manager with live console access.', url: 'https://www.spigotmc.org/resources/ultramonitor-%E2%AD%95-console-support-%E2%AD%95.121546/', tags: ['Java', 'Node', 'React'] },
+  { name: 'Cansat V2', description: 'Real-time dashboard for CanSat sensor data. React frontend, Node and Express backend.', url: 'https://github.com/abyssxd/CanSat-v2', tags: ['React', 'Node'] },
+  { name: 'Java2Bedrock Tools', description: 'Browser tool that generates Bedrock Edition resource packs from Java Edition assets.', url: 'https://abishekbhusal.com/j2b_gui', tags: ['React', 'JS'] },
 ];
 
 const collabProjects = [
-  { name: 'Vatti Taverna', description: 'Restaurant website with menu, interactive map, and contact info. Built in ReactJS.', url: 'https://thevatti.com', tags: ['React', 'CSS'] },
-  { name: 'Agendify', description: 'Team scheduling & task management app for a high-school research project. Built with Android Studio.', url: null, tags: ['Java', 'Android'], discontinued: true },
+  { name: 'Vatti Taverna', description: 'Restaurant website with a menu, an interactive map and contact details. Built in React.', url: 'https://thevatti.com', tags: ['React', 'CSS'] },
+  { name: 'Agendify', description: 'Scheduling and task app made for a high-school research project. Built in Android Studio.', url: null, tags: ['Java', 'Android'], discontinued: true },
 ];
 
 const cardVariants = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } };

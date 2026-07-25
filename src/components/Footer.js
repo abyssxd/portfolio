@@ -7,7 +7,7 @@ export default function Footer() {
       <div className="footer-inner">
         <div>
           <div className="footer-brand">AB<span>.</span></div>
-          <div className="footer-copy">© 2024–2026 Abishek Bhusal · Barcelona</div>
+          <div className="footer-copy">© 2024-2026 Abishek Bhusal · Barcelona</div>
         </div>
 
         <div className="footer-links">

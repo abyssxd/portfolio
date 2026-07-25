@@ -3,10 +3,10 @@ import { motion } from 'framer-motion';
 import './styles/experience.css';
 
 const experiences = [
-  { period: '2024 — 2025', title: 'React', details: 'Restaurant website (Vatti Taverna), BlockBase, Minecraft Unicode Tools, Kafal Converter frontend, portfolio sites.' },
-  { period: '2023 — 2025', title: 'Java', details: 'UltraCollections & UltraMonitor (MC plugins on SpigotMC), Agendify (school Android app).' },
-  { period: '2023 — 2024', title: 'Node.js', details: 'CanSat v2 — real-time data monitoring dashboard with React frontend and Express backend. Kafal Converter backend.' },
-  { period: '2020 — 2023', title: 'Web Development', details: 'Foundational HTML, CSS, PHP & JavaScript sites. Started building presence online.' },
+  { period: '2024-2025', title: 'React', details: 'Restaurant website (Vatti Taverna), BlockBase, Minecraft Unicode Tools, Kafal Converter frontend, portfolio sites.' },
+  { period: '2023-2025', title: 'Java', details: 'UltraCollections and UltraMonitor (Minecraft plugins published on SpigotMC), Agendify (school Android app).' },
+  { period: '2023-2024', title: 'Node.js', details: 'CanSat v2, a real-time sensor dashboard with a React frontend and an Express backend. Also the Kafal Converter backend.' },
+  { period: '2020-2023', title: 'Web Development', details: 'First sites, built with plain HTML, CSS, PHP and JavaScript while learning the basics.' },
 ];
 
 const item = { hidden: { opacity: 0, x: -10 }, show: { opacity: 1, x: 0, transition: { duration: 0.45 } } };

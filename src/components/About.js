@@ -6,10 +6,10 @@ const fadeUp = { hidden: { opacity: 0, y: 20 }, show: { opacity: 1, y: 0, transi
 const container = { hidden: {}, show: { transition: { staggerChildren: 0.1 } } };
 
 const info = [
-  { k: 'Role',        v: 'Full-Stack Developer' },
   { k: 'Location',   v: 'Barcelona, ES' },
-  { k: 'Looking for',v: 'Internship / Freelance' },
-  { k: 'Stack',      v: 'React · Node · Java' },
+  { k: 'Studying',   v: 'Ingeniería Informática, UB' },
+  { k: 'Works with', v: 'React · Node · Java' },
+  { k: 'Focus',      v: 'Web apps and small tools' },
 ];
 
 export default function About() {
@@ -24,15 +24,15 @@ export default function About() {
       >
         <div className="about-text-block">
           <motion.p className="section-label" variants={fadeUp}>About me</motion.p>
-        <motion.h2 className="section-heading" variants={fadeUp}>Developer &amp; designer at heart.</motion.h2>
+          <motion.h2 className="section-heading" variants={fadeUp}>Learning by building.</motion.h2>
           <motion.p className="about-body" variants={fadeUp}>
-            I'm a 19-year-old developer who cares deeply about <strong>clarity</strong>,{' '}
-            <strong>performance</strong>, and <strong>design</strong>. I turn complex ideas into simple,
-            delightful products, from interactive dashboards to game plugins.
+            I'm Abishek Bhusal, a 19-year-old student based in Barcelona, currently studying
+            Ingeniería Informática at the Universitat de Barcelona. Alongside my studies, I've been
+            building web apps and small tools using React, Node.js, and Java through personal projects.
           </motion.p>
           <motion.p className="about-body" variants={fadeUp}>
-            Recently I've been building dashboards, tooling, and website projects while pushing into
-            app &amp; game development. Multilingual, Barcelona-based, Nepali roots.
+            I enjoy learning by building, figuring out how things work by actually putting them
+            together, from the interface down to the logic behind it.
           </motion.p>
         </div>
 
