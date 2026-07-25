@@ -13,8 +13,6 @@
   align-items: start;
 }
 
-.about-text-block {}
-
 .about-body {
   font-size: 1rem;
   color: var(--text-muted);

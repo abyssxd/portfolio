@@ -22,8 +22,7 @@ export default function Languages() {
   return (
     <section className="skills-section">
       <div className="skills-inner">
-        <p className="section-label">Toolkit</p>
-        <h2 className="section-heading">Skills &amp; Tools</h2>
+        <h2 className="section-heading">Skills and tools</h2>
 
         <motion.div
           className="skills-grid"

@@ -3,13 +3,10 @@ import { motion, AnimatePresence } from 'framer-motion';
 import './styles/header.css';
 
 const links = [
-  { href: '#home',         label: 'Home' },
-  { href: '#about',        label: 'About' },
-  { href: '#projects',     label: 'Projects' },
-  { href: '#experience',   label: 'Experience' },
-  { href: '#proglanguages',label: 'Skills' },
-  { href: '#languages',    label: 'Languages' },
-  { href: '#stats',        label: 'Stats' },
+  { href: '#about',      label: 'About' },
+  { href: '#projects',   label: 'Projects' },
+  { href: '#experience', label: 'Experience' },
+  { href: '#contact',    label: 'Contact' },
 ];
 
 export default function Header({ toggleTheme, isLightMode }) {

@@ -37,7 +37,6 @@ export default function SpokenLanguages() {
   return (
     <section className="spoken-section">
       <div className="spoken-inner">
-        <p className="section-label">Multilingual</p>
         <h2 className="section-heading">Spoken Languages</h2>
 
         <motion.div

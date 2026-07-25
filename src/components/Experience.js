@@ -16,7 +16,6 @@ export default function Experience() {
     <section className="timeline-section">
       <div className="timeline-inner">
         <div className="timeline-header">
-          <p className="section-label">Background</p>
           <h2 className="section-heading">Experience</h2>
         </div>
 
@@ -32,7 +31,7 @@ export default function Experience() {
               <div className="timeline-line" />
               <div className="timeline-content">
                 <div className="timeline-period">{exp.period}</div>
-                <h4 className="timeline-title">{exp.title}</h4>
+                <h3 className="timeline-title">{exp.title}</h3>
                 <p className="timeline-details">{exp.details}</p>
               </div>
             </motion.article>

@@ -37,7 +37,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            GitHub ↗︎
+            GitHub ↗
           </a>
           <a
             className="cta cta-ghost"
@@ -45,7 +45,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
           >
-            LinkedIn ↗︎
+            LinkedIn ↗
           </a>
           <a className="cta cta-ghost" href="#projects">
             See my work
@@ -53,7 +53,6 @@ export default function Hero() {
         </motion.div>
 
         <motion.div className="hero-meta" {...fadeUp(0.55)}>
-          <span className="hero-meta-dot" aria-hidden="true" />
           Barcelona, ES · Studying Ingeniería Informática at UB
         </motion.div>
       </motion.div>

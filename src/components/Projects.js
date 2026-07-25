@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
+import React from 'react';
+import { motion } from 'framer-motion';
 import './styles/projects.css';
 
 const featured = {
@@ -32,43 +32,76 @@ const collabProjects = [
 
 const cardVariants = { hidden: { opacity: 0, y: 18 }, show: { opacity: 1, y: 0 } };
 
-function ProjectGrid({ items, onSelect }) {
+function CardBody({ project }) {
   return (
-    <motion.div className="projects-grid" variants={{ show: { transition: { staggerChildren: 0.07 } } }} initial="hidden" whileInView="show" viewport={{ once: true, margin: '-60px' }}>
+    <>
+      <h3>{project.name}</h3>
+      <p>{project.description}</p>
+      <div className="project-footer">
+        <div className="project-tags">
+          {project.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
+          {project.discontinued && <span className="chip chip-muted">Discontinued</span>}
+        </div>
+        {project.url && <span className="project-arrow" aria-hidden="true">↗</span>}
+      </div>
+    </>
+  );
+}
+
+function ProjectGrid({ items }) {
+  return (
+    <motion.div
+      className="projects-grid"
+      variants={{ show: { transition: { staggerChildren: 0.07 } } }}
+      initial="hidden"
+      whileInView="show"
+      viewport={{ once: true, margin: '-60px' }}
+    >
       {items.map((p) => (
-        <motion.article className="project-card" key={p.name} variants={cardVariants} onClick={() => onSelect(p)}>
-          <h4>{p.name}</h4>
-          <p>{p.description}</p>
-          <div className="project-footer">
-            <div style={{ display: 'flex', gap: '0.3rem', flexWrap: 'wrap' }}>
-              {p.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
-              {p.discontinued && <span className="chip chip-muted">Discontinued</span>}
-            </div>
-            <span className="project-arrow">↗︎︎</span>
-          </div>
-        </motion.article>
+        p.url ? (
+          <motion.a
+            className="project-card"
+            key={p.name}
+            variants={cardVariants}
+            href={p.url}
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <CardBody project={p} />
+          </motion.a>
+        ) : (
+          <motion.div className="project-card project-card-static" key={p.name} variants={cardVariants}>
+            <CardBody project={p} />
+          </motion.div>
+        )
       ))}
     </motion.div>
   );
 }
 
 export default function Projects() {
-  const [active, setActive] = useState(null);
-
   return (
     <section className="projects-section">
       <div className="projects-inner">
         <p className="section-label">Work</p>
         <h2 className="section-heading">Projects</h2>
 
-        <motion.div className="featured-card" initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.55 }}>
+        <motion.div
+          className="featured-card"
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.55 }}
+        >
           <div className="featured-top">
             <div>
-              <div className="featured-badge">Featured Project</div>
+              <div className="featured-badge">Featured</div>
               <h3 className="featured-name">{featured.name}</h3>
               <p className="featured-tagline">{featured.tagline}</p>
             </div>
-            <a className="cta cta-primary featured-cta" href={featured.url} target="_blank" rel="noopener noreferrer">Visit site ↗︎︎</a>
+            <a className="cta cta-primary featured-cta" href={featured.url} target="_blank" rel="noopener noreferrer">
+              Visit site ↗
+            </a>
           </div>
           <p className="featured-desc">{featured.description}</p>
           <div className="featured-features">
@@ -87,34 +120,16 @@ export default function Projects() {
           </div>
         </motion.div>
 
-        <div className="projects-block" style={{ marginTop: '2rem' }}>
-          <p className="projects-sub-label">Own Projects</p>
-          <ProjectGrid items={ownProjects} onSelect={setActive} />
+        <div className="projects-block">
+          <p className="projects-sub-label">Own projects</p>
+          <ProjectGrid items={ownProjects} />
         </div>
 
-        <div className="projects-block" style={{ marginTop: '2rem' }}>
+        <div className="projects-block">
           <p className="projects-sub-label">Collaborations</p>
-          <ProjectGrid items={collabProjects} onSelect={setActive} />
+          <ProjectGrid items={collabProjects} />
         </div>
       </div>
-
-      <AnimatePresence>
-        {active && (
-          <motion.div className="modal-overlay" initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} onClick={() => setActive(null)}>
-            <motion.div className="modal-box" initial={{ y: 24, opacity: 0 }} animate={{ y: 0, opacity: 1 }} exit={{ y: 16, opacity: 0 }} transition={{ duration: 0.25 }} onClick={(e) => e.stopPropagation()}>
-              <h4 className="modal-title">{active.name}</h4>
-              <p className="modal-desc">{active.description}</p>
-              <div style={{ display: 'flex', gap: '0.35rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-                {active.tags.map((t) => <span className="chip" key={t}>{t}</span>)}
-              </div>
-              <div className="modal-actions">
-                {active.url && <a className="cta cta-primary" href={active.url} target="_blank" rel="noopener noreferrer">Open project ↗︎︎</a>}
-                <button className="cta cta-ghost" onClick={() => setActive(null)}>Close</button>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
     </section>
   );
 }

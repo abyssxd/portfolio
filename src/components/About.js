@@ -23,7 +23,6 @@ export default function About() {
         viewport={{ once: true, margin: '-80px' }}
       >
         <div className="about-text-block">
-          <motion.p className="section-label" variants={fadeUp}>About me</motion.p>
           <motion.h2 className="section-heading" variants={fadeUp}>Learning by building.</motion.h2>
           <motion.p className="about-body" variants={fadeUp}>
             I'm Abishek Bhusal, a 19-year-old student based in Barcelona, currently studying

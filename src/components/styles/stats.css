@@ -11,7 +11,7 @@
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: 1fr;
   gap: 1rem;
 }
 
@@ -28,7 +28,7 @@
   display: flex;
   flex-direction: column;
   transition: border-color 0.2s;
-  min-height: 180px;
+  min-height: 150px;
 }
 
 .stat-card:hover { border-color: var(--border-mid); }
@@ -64,53 +64,6 @@
   align-items: center;
 }
 
-.stat-card-body-img {
-  padding: 0.5rem 0.75rem 0.75rem;
-}
-
-/* Streak image */
-.stat-img {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* Profile numbers */
-.gh-stats-row {
-  display: flex;
-  gap: 0;
-  width: 100%;
-}
-
-.gh-stat-item {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.2rem;
-  padding: 0.5rem 0.25rem;
-  border-right: 1px solid var(--border);
-}
-.gh-stat-item:last-child { border-right: none; }
-
-.gh-stat-val {
-  font-family: var(--font-display);
-  font-size: 1.5rem;
-  font-weight: 700;
-  letter-spacing: -0.04em;
-  color: var(--accent);
-  line-height: 1;
-}
-
-.gh-stat-label {
-  font-family: var(--font-mono);
-  font-size: 0.62rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--text-muted);
-  text-align: center;
-}
-
 /* Languages */
 .lang-bars {
   width: 100%;
@@ -137,8 +90,8 @@
 
 .lang-legend {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0.45rem 0.75rem;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 0.5rem 1rem;
 }
 
 .lang-legend-item {
@@ -165,6 +118,12 @@
 .lang-pct {
   font-family: var(--font-mono);
   font-size: 0.7rem;
+  color: var(--text-muted);
+}
+
+/* Empty / error state */
+.stat-empty {
+  font-size: 0.85rem;
   color: var(--text-muted);
 }
 

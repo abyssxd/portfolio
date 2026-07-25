@@ -51,10 +51,6 @@
   display: block;
 }
 
-body[data-theme='light'] .hero-name-outline {
-  -webkit-text-stroke: 1.5px var(--text);
-}
-
 .hero-tagline {
   font-size: 0.95rem;
   color: var(--text-muted);
@@ -79,19 +75,6 @@ body[data-theme='light'] .hero-name-outline {
   font-size: 0.7rem;
   color: var(--text-muted);
   letter-spacing: 0.04em;
-}
-
-.hero-meta-dot {
-  width: 6px; height: 6px;
-  border-radius: 50%;
-  background: var(--accent);
-  animation: pulse 2s infinite;
-  flex-shrink: 0;
-}
-
-@keyframes pulse {
-  0%, 100% { opacity: 1; }
-  50% { opacity: 0.3; }
 }
 
 /* Right - portrait */
